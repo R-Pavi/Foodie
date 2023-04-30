@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "385190812787",
+    "project_id": "foodie-besquare",
+    "storage_bucket": "foodie-besquare.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:385190812787:android:bd097b4ab98537fea31e06",
+        "android_client_info": {
+          "package_name": "com.example.foodie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "385190812787-5anfap99fsannre14d3oa82co29quc2f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAObDysCupf9CRwiO-Xeb2Z2Zk-EMisAHE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "385190812787-5anfap99fsannre14d3oa82co29quc2f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
