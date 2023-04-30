@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodie/homepage.dart';
-
+import 'package:foodie/pages/auth_page.dart';
 
 class RecipeLandingPage extends StatelessWidget {
   const RecipeLandingPage({Key? key}) : super(key: key);
@@ -11,7 +11,6 @@ class RecipeLandingPage extends StatelessWidget {
         padding: EdgeInsets.zero,
         child: SafeArea(
           child: Scaffold(
-          
             body: Stack(
               children: [
                 Positioned.fill(
@@ -60,10 +59,14 @@ class RecipeLandingPage extends StatelessWidget {
                           Expanded(
                             flex: 1,
                             child: Padding(
-                              padding: const EdgeInsets.only(left:30.0),
+                              padding: const EdgeInsets.only(left: 30.0),
                               child: ElevatedButton(
                                 onPressed: () {
-                                  // Navigate to login/sign-up screen
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => const AuthPage()),
+                                  );
                                 },
                                 child: const Text('Log in'),
                               ),
@@ -76,7 +79,11 @@ class RecipeLandingPage extends StatelessWidget {
                               padding: const EdgeInsets.only(right: 30.0),
                               child: ElevatedButton(
                                 onPressed: () {
-                                  // Navigate to login/sign-up screen
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => const AuthPage()),
+                                  );
                                 },
                                 child: const Text('Sign Up'),
                               ),
@@ -84,7 +91,6 @@ class RecipeLandingPage extends StatelessWidget {
                           ),
                         ],
                       ),
-                     
                       TextButton(
                         onPressed: () {
                           Navigator.push(

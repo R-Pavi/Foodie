@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:foodie/pages/auth_page.dart';
 import 'package:foodie/search.dart';
+import 'package:foodie/views/home.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:anim_search_bar/anim_search_bar.dart';
 import 'profile.dart';
 import 'api.dart';
 import 'details.dart';
+import 'views/home.dart';
 
 class RecipeHomePage extends StatefulWidget {
   const RecipeHomePage({Key? key}) : super(key: key);
@@ -49,7 +52,11 @@ class RecipeHomePageState extends State<RecipeHomePage> {
                     )
                   : ElevatedButton(
                       onPressed: () {
-                        // Navigate to login screen
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const AuthPage()),
+                        );
                       },
                       child: const Text('Login/SignUp'),
                     ),
@@ -121,22 +128,33 @@ class RecipeHomePageState extends State<RecipeHomePage> {
             height: 20,
           ),
           Row(
-            children: const [
-              Padding(
+            children:  [
+              const Padding(
                 padding: EdgeInsets.all(10.0),
                 child: Text("Recipes", style: TextStyle(color: Colors.white)),
               ),
-              Spacer(),
+              const Spacer(),
               Padding(
-                padding: EdgeInsets.all(10.0),
-                child: Text("See All", style: TextStyle(color: Colors.white)),
-              )
+                padding: const EdgeInsets.all(10.0),
+                child: InkWell(
+                  child: const Text(
+                    "See All",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => HomePage()),
+                    );
+                  },
+                ),
+              ),
             ],
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
-              children:  [
+              children: [
                 // const Spacer(),
                 // Padding(
                 //   padding: const EdgeInsets.only(right:8.0),
@@ -156,12 +174,12 @@ class RecipeHomePageState extends State<RecipeHomePage> {
                 // ),
                 const Spacer(),
                 AnimatedContainer(
-                  duration:  const Duration(milliseconds: 300),
+                  duration: const Duration(milliseconds: 300),
                   curve: Curves.easeInOut,
-                  width:
-                      _isExpanded ? MediaQuery.of(context).size.width * 0.95 : 50,
+                  width: _isExpanded
+                      ? MediaQuery.of(context).size.width * 0.95
+                      : 50,
                   height: 40,
-                  
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(40),
                     color: Colors.grey[200],
@@ -181,7 +199,8 @@ class RecipeHomePageState extends State<RecipeHomePage> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => const SearchPage(),
+                                        builder: (context) =>
+                                            const SearchPage(),
                                       ),
                                     );
                                   },
