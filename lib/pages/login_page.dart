@@ -6,6 +6,9 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:foodie/components/my_button.dart';
 import 'package:foodie/components/my_textfield.dart';
 
+
+
+
 class LogInPage extends StatefulWidget {
   final Function()? onTap;
   const LogInPage({super.key, required this.onTap});
