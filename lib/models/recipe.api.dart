@@ -12,7 +12,9 @@ class RecipeApi {
     final response = await http.get(
       url,
       headers: {
+
         'x-rapidapi-key': '8bfbd4eabamsh6042655d9dbc09cp14ad62jsn92d93d57f8df',
+
         'x-rapidapi-host': 'tasty.p.rapidapi.com',
       },
     );
@@ -40,3 +42,5 @@ class RecipeApi {
     return recipes;
   }
 }
+
+

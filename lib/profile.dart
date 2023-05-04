@@ -1,28 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
+
+import 'app_bar.dart';
+
 
 class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key});
+  const ProfilePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.menu),
-          onPressed: () {},
-        ),
-        title: const Text('Recipes'),
-        actions: const <Widget>[
-          Padding(
-            padding: EdgeInsets.only(right: 8.0),
-            child: CircleAvatar(
-              backgroundColor: Colors.transparent,
-              child: Icon(Icons.person, color: Colors.white),
-            ),
-          )
-        ],
-      ),
+      appBar: const MyAppBar(title: 'Profile Page',),
+      
+      // AppBar(
+      //   leading: IconButton(
+      //     icon: const Icon(Icons.menu),
+      //     onPressed: () {},
+      //   ),
+      //   title: const Text('Recipes'),
+      //   actions: const <Widget>[
+      //     Padding(
+      //       padding: EdgeInsets.only(right: 8.0),
+      //       child: CircleAvatar(
+      //         backgroundColor: Colors.transparent,
+      //         child: Icon(Icons.person, color: Colors.white),
+      //       ),
+      //     )
+      //   ],
+      // ),
       body: SizedBox(
   width: 300,
   height: 300,

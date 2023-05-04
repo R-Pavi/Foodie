@@ -5,9 +5,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:foodie/components/my_button.dart';
 import 'package:foodie/components/my_textfield.dart';
-
-
-
+import 'package:foodie/homepage.dart';
 
 class LogInPage extends StatefulWidget {
   final Function()? onTap;
@@ -43,6 +41,10 @@ class _LogInPageState extends State<LogInPage> {
       );
       // pop the loading circle
       Navigator.pop(context);
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => RecipeHomePage()),
+      );
     } on FirebaseAuthException catch (e) {
       Navigator.pop(context);
       // show error message

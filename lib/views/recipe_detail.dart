@@ -215,3 +215,4 @@ class RecipeDetail extends StatelessWidget {
     );
   }
 }
+

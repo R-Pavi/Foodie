@@ -1,10 +1,8 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-Future<List<dynamic>> fetchRecipes({int size = 20}) async {
-  final url = Uri.parse(
-      'https://tasty.p.rapidapi.com/recipes/list?from=0&size=$size&tags=under_30_minutes');
-
+Future<List<dynamic>> fetchRecipes({int size = 20, required String tag}) async {
+  final url = Uri.parse('https://tasty.p.rapidapi.com/recipes/list?from=0&size=$size&tags=$tag');
   final response = await http.get(
     url,
     headers: {

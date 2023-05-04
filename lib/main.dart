@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'landing.dart';
 import 'package:foodie/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'landing.dart';
+
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,10 +21,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Foodology',
       theme: ThemeData(
           primarySwatch: Colors.red, scaffoldBackgroundColor: Colors.black),
       home: const RecipeLandingPage(),
     );
   }
 }
+
