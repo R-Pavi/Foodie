@@ -70,7 +70,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '385190812787',
     projectId: 'foodie-besquare',
     storageBucket: 'foodie-besquare.appspot.com',
-    iosClientId: '385190812787-te036lu1vbr7dj9jidev57e03da9g6nb.apps.googleusercontent.com',
+    iosClientId:
+        '385190812787-te036lu1vbr7dj9jidev57e03da9g6nb.apps.googleusercontent.com',
     iosBundleId: 'com.example.foodie',
   );
 }

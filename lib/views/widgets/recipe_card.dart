@@ -3,17 +3,15 @@ import 'package:flutter/material.dart';
 
 class RecipeCard extends StatelessWidget {
   final String name;
-  final String user_ratings;
   final String cook_time_minutes;
-  final String thumbnail_url;
-  final String videoUrl;
+  final String? thumbnail_url;
+  final String? videoUrl;
 
   RecipeCard({
     required this.name,
     required this.cook_time_minutes,
-    required this.user_ratings,
-    required this.thumbnail_url,
-    required this.videoUrl,
+    this.thumbnail_url,
+    this.videoUrl,
   });
   @override
   Widget build(BuildContext context) {
@@ -42,7 +40,8 @@ class RecipeCard extends StatelessWidget {
               Colors.black.withOpacity(0.35),
               BlendMode.multiply,
             ),
-            image: NetworkImage(thumbnail_url),
+            image: NetworkImage(thumbnail_url ??
+                'https://png.pngtree.com/png-vector/20220623/ourmid/pngtree-food-logo-png-image_5297921.png'),
             fit: BoxFit.cover,
           ),
         ),
@@ -53,9 +52,7 @@ class RecipeCard extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 5.0),
                 child: Text(
                   name,
-                  style: TextStyle(
-                    fontSize: 19,
-                  ),
+                  style: TextStyle(fontSize: 19, color: Colors.white),
                   overflow: TextOverflow.ellipsis,
                   maxLines: 2,
                   textAlign: TextAlign.center,
@@ -68,7 +65,7 @@ class RecipeCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Visibility(
-                    visible: videoUrl!= 'noVideo' ? true: false,
+                    visible: videoUrl != 'noVideo' ? true : false,
                     child: Container(
                       padding: EdgeInsets.all(5),
                       margin: EdgeInsets.all(10),
@@ -78,17 +75,25 @@ class RecipeCard extends StatelessWidget {
                       ),
                       child: InkWell(
                         onTap: () => {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => DetailVideo( videoUrl: videoUrl)))
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => videoUrl != null
+                                      ? DetailVideo(videoUrl: videoUrl!)
+                                      : Container()))
                         },
                         child: Row(
                           children: [
-                            Icon(
+                            const Icon(
                               Icons.play_circle_fill_rounded,
                               color: Colors.yellow,
                               size: 18,
                             ),
-                            SizedBox(width: 7),
-                            Text('Play video'),
+                            const SizedBox(width: 7),
+                            const Text(
+                              'Play video',
+                              style: TextStyle(color: Colors.white),
+                            ),
                           ],
                         ),
                       ),
@@ -98,18 +103,21 @@ class RecipeCard extends StatelessWidget {
                     padding: EdgeInsets.all(5),
                     margin: EdgeInsets.all(10),
                     decoration: BoxDecoration(
-                      color: Colors.black.withOpacity(0.4),
+                      color: Colors.black.withOpacity(0.2),
                       borderRadius: BorderRadius.circular(15),
                     ),
                     child: Row(
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.schedule,
                           color: Colors.yellow,
                           size: 18,
                         ),
-                        SizedBox(width: 7),
-                        Text(cook_time_minutes + " mins"),
+                        const SizedBox(width: 7),
+                        Text(
+                          cook_time_minutes + " mins",
+                          style: TextStyle(color: Colors.white),
+                        ),
                       ],
                     ),
                   )
