@@ -10,7 +10,7 @@ class RecipeApi {
     final response = await http.get(
       url,
       headers: {
-        'x-rapidapi-key': '42143c4529msh775bf56921b4018p14d05ejsnb083e1f619fd',
+        'x-rapidapi-key': 'b28101f78bmsh806710711052f4bp1d477ejsnbb725ff3165f',
         'x-rapidapi-host': 'tasty.p.rapidapi.com',
       },
     );
@@ -53,3 +53,5 @@ videoUrl: recipeData['original_video_url'] != null ? recipeData['original_video_
     return recipes;
   }
 }
+
+
