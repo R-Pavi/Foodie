@@ -96,7 +96,7 @@ class RecipeLandingPage extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const RecipeHomePage()),
+                                builder: (context) => RecipeHomePage()),
                           );
                         },
                         child: const Text('Skip for now',
