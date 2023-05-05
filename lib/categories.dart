@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:foodie/bottom_nav.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
 import 'app_bar.dart';
 import 'filtered.dart';
-import 'homepage.dart';
 
 class Categories extends StatelessWidget {
   const Categories({Key? key}) : super(key: key);
