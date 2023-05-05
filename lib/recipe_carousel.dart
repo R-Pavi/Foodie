@@ -47,7 +47,46 @@ class _RecipeCarouselState extends State<RecipeCarousel> {
                         name: _foodList.results![index].name ?? '',
                         thumbnail_url: _foodList.results![index].thumbnailUrl,
                         videoUrl: _foodList.results![index].videoUrl),
-                    onTap: () => {},
+                    onTap: () => {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => FeedDetail(
+                                    name: _foodList.results?[index]?.name ??
+                                        'No data available',
+                                    cook_time_minutes: _foodList
+                                            .results?[index]?.cookTimeMinutes
+                                            ?.toString() ??
+                                        '',
+                                    thumbnail_url: _foodList
+                                            .results?[index]?.thumbnailUrl ??
+                                        'No data available',
+                                    description: _foodList
+                                            .results?[index]?.description ??
+                                        'No data available',
+                                    servings: _foodList
+                                            .results?[index]?.numServings
+                                            ?.toString() ??
+                                        'No data available',
+                                    rawText: _foodList.results?[index]?.sections
+                                            ?.first?.components
+                                            ?.map((component) =>
+                                                component.rawText)
+                                            ?.toList()
+                                            ?.toString() ??
+                                        'No data available',
+                                    instructions: _foodList.results?[index]
+                                                ?.instructions !=
+                                            null
+                                        ? _foodList.results![index]
+                                                .instructions![0].displayText ??
+                                            'No data available'
+                                        : 'No data available',
+                                    videoUrl:
+                                        _foodList.results?[index]?.videoUrl ??
+                                            'No data available',
+                                  )))
+                    },
                   );
                 } else {
                   return SizedBox.shrink(); // or any placeholder widget

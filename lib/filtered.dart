@@ -47,7 +47,7 @@ class _FilteredPageState extends State<FilteredPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const MyAppBar(title: "Filtered Foods"),
+      appBar: const MyAppBar(title: "New Menu"),
       body: FutureBuilder<List<dynamic>>(
         future: _recipesFuture,
         builder: (context, snapshot) {
