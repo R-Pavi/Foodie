@@ -80,6 +80,16 @@ flutter:
     - assets/images/landing.jpg
     - assets/images/logo1.png
     - assets/images/profile_pic.png
+    - assets/images/Landing_page.png
+    - assets/images/Login.png
+    - assets/images/Signup.png
+    - assets/images/Home_page.png
+    - assets/images/Recipe_page.png
+    - assets/images/Details_page.png
+    - assets/images/Search_page.png
+    - assets/images/Filter_page.png
+    - assets/images/Profile_page.png
+    
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
