@@ -50,7 +50,7 @@ class MyGNav extends StatelessWidget {
               MaterialPageRoute(builder: (context) => const SearchPage()),
             );
           },
-          icon: Icons.book,
+          icon: Icons.search,
           text: "Search",
         ),
       ],
