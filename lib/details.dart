@@ -44,15 +44,7 @@ class RecipeDetailsPageState extends State<RecipeDetailsPage> {
             ),
           ),
             ),
-            const Positioned(
-          top: 5,
-          right: 5,
-          child: Icon(
-            Icons.favorite,
-            color: Colors.white,
-            size: 30,
-          ),
-            ),
+            
           ],
               ),
               

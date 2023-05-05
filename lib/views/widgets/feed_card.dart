@@ -45,6 +45,7 @@ class FeedCard extends StatelessWidget {
         child: Stack(
           children: [
             Align(
+              alignment: Alignment.center,
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 5.0),
                 child: Text(
@@ -55,9 +56,9 @@ class FeedCard extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
               ),
-              alignment: Alignment.center,
             ),
             Align(
+              alignment: Alignment.bottomLeft,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -80,14 +81,14 @@ class FeedCard extends StatelessWidget {
                                       : Container()))
                         },
                         child: Row(
-                          children: [
-                            const Icon(
+                          children: const [
+                            Icon(
                               Icons.play_circle_fill_rounded,
                               color: Colors.yellow,
                               size: 20,
                             ),
-                            const SizedBox(width: 20),
-                            const Text(
+                            SizedBox(width: 20),
+                            Text(
                               'Play video',
                               style: TextStyle(color: Colors.white),
                             ),
@@ -97,8 +98,8 @@ class FeedCard extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    padding: EdgeInsets.all(5),
-                    margin: EdgeInsets.all(10),
+                    padding: const EdgeInsets.all(5),
+                    margin: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       color: Colors.black.withOpacity(0.2),
                       borderRadius: BorderRadius.circular(15),
@@ -107,7 +108,6 @@ class FeedCard extends StatelessWidget {
                   )
                 ],
               ),
-              alignment: Alignment.bottomLeft,
             ),
           ],
         ),

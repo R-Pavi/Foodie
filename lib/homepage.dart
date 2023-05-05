@@ -46,9 +46,9 @@ class RecipeHomePageState extends State<RecipeHomePage> {
         children: [
           Row(children: const [
             Padding(
-              padding: EdgeInsets.only(top: 13.0, left: 65.0, bottom: 10),
+              padding: EdgeInsets.only(top: 13.0, left: 53.0, bottom: 10),
               child: Text(
-                "Wipe Your Drool and start cookin'...",
+                "Wipe Your Drool and Start Cookin'...",
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 20,
@@ -61,7 +61,7 @@ class RecipeHomePageState extends State<RecipeHomePage> {
               const Padding(
                 padding: EdgeInsets.all(10.0),
                 child: Text("Discover New Menu",
-                    style: TextStyle(color: Colors.white)),
+                    style: TextStyle(color: Colors.white, fontSize: 16)),
               ),
               const Spacer(),
               Padding(
@@ -69,7 +69,7 @@ class RecipeHomePageState extends State<RecipeHomePage> {
                 child: InkWell(
                   child: const Text(
                     "See All",
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: Colors.white, fontSize: 16),
                   ),
                   onTap: () {
                     Navigator.push(
@@ -175,26 +175,15 @@ class RecipeHomePageState extends State<RecipeHomePage> {
             color: Colors.grey,
           ),
           Row(
-            children: [
-              const Padding(
-                padding: EdgeInsets.all(10.0),
-                child: Text("Trending", style: TextStyle(color: Colors.white)),
-              ),
-              const Spacer(),
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [
               Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: InkWell(
-                  child: const Text(
-                    "See All",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const HomePage()),
-                    );
-                  },
-                ),
+                padding: EdgeInsets.all(10.0),
+                child: Text("#Top 5 Trending ",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold)),
               ),
             ],
           ),
