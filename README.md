@@ -1,16 +1,24 @@
-# foodie
+#Name of the application:
+Foodology
 
-A new Flutter project.
+#Features and Functionality
+The app has the following features:
 
-## Getting Started
+Browse recipes: Users can browse through a list recipes view details such as name, description, number of servings, ingredient and instruction.
 
-This project is a starting point for a Flutter application.
+Search recipes: Users can search for their favourite food 
 
-A few resources to get you started if this is your first Flutter project:
+Filter recipes: Users can filter foods by categories of meals.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+User authentication: Users can create an account and log in to the app.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+#Screenshot
+![Landing page](assets/images/Landing_page.png)
+![Signup page](assets/images/Signup.png)
+![Login page](assets/images/Login.png)
+![Home page](assets/images/Home_page.png)
+![Recipe page](assets/images/Recipe_page.png)
+![Details page](assets/images/Details_page.png)
+![Search page](assets/images/Search_page.png)
+![Filter page](assets/images/FIlter_page.png)
+![Profile page](assets/images/Profile_page.png)
