@@ -6,6 +6,7 @@ import 'package:foodie/components/my_textfield.dart';
 import 'package:foodie/homepage.dart';
 import 'package:lottie/lottie.dart';
 
+
 class RegisterPage extends StatefulWidget {
   final Function()? onTap;
   const RegisterPage({super.key, required this.onTap});
@@ -49,9 +50,7 @@ class _RegisterPage extends State<RegisterPage> {
       Navigator.pop(context);
       Navigator.push(
         context,
-        MaterialPageRoute(
-          builder: (context) => RecipeHomePage(),
-        ),
+        MaterialPageRoute(builder: (context) => RecipeHomePage()),
       );
     } on FirebaseAuthException catch (e) {
       Navigator.pop(context);

@@ -1,6 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:foodie/homepage.dart';
 import 'package:foodie/pages/auth_page.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+
+// final List<String> imgList = [
+//   'assets/images/landingpg1.jpeg',
+//   'assets/images/landingpg2.jpeg',
+//   'assets/images/landingpg3.jpeg',
+//   'assets/images/landingpg4.jpeg',
+//   'assets/images/landingpg5.jpeg',
+// ];
 
 class RecipeLandingPage extends StatelessWidget {
   const RecipeLandingPage({Key? key}) : super(key: key);
@@ -22,35 +31,65 @@ class RecipeLandingPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                Center(
+                Positioned.fill(
+                  top:-160,
+                  child: CarouselSlider(
+                    options: CarouselOptions(
+                      height: 450,
+                      autoPlay: true,
+                      enlargeCenterPage: true,
+                    ),
+                    items: const [
+                      'assets/images/landingpg1.jpeg',
+                      'assets/images/landingpg2.jpeg',
+                      'assets/images/landingpg3.jpeg',
+                      'assets/images/landingpg4.jpeg',
+                      'assets/images/landingpg5.jpeg',
+                    ].map((imagePath) {
+                      return Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          border: Border.all(
+                            color: Colors.red,
+                            width: 4,
+                          ),
+                        ),
+                        child: Image.asset(
+                          imagePath,
+                          fit: BoxFit.cover,
+                        ),
+                      );
+                    }).toList(),
+                  ),
+                ),
+                Positioned(
+                  left: 0,
+                  right: 0,
+                  bottom: 5,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      ClipOval(
-                        child: Container(
-                          width: 100,
-                          height: 100,
-                          color: Colors.red,
-                          alignment: Alignment.center,
-                          child: const Icon(Icons.food_bank_outlined),
+                      const Padding(
+                        padding: EdgeInsets.only(bottom:8.0),
+                        child: Text(
+                          "Foodology",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 35,
+                              fontWeight: FontWeight.bold),
                         ),
                       ),
-                      const Text(
-                        "Foodology",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 35,
-                            fontWeight: FontWeight.bold),
-                      ),
-                      const Text(
-                        "Digitalize your recipe book",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold),
+                      const Padding(
+                        padding: EdgeInsets.only(bottom:5.0),
+                        child: Text(
+                          "Digitalize your recipe book",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold),
+                        ),
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -106,7 +145,7 @@ class RecipeLandingPage extends StatelessWidget {
                       ),
                     ],
                   ),
-                )
+                ),
               ],
             ),
           ),

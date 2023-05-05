@@ -1,15 +1,13 @@
 import 'package:foodie/views/detail_video.dart';
 import 'package:flutter/material.dart';
 
-class RecipeCard extends StatelessWidget {
+class FeedCard extends StatelessWidget {
   final String name;
-  final String cook_time_minutes;
   final String? thumbnail_url;
   final String? videoUrl;
 
-  RecipeCard({
+  FeedCard({
     required this.name,
-    required this.cook_time_minutes,
     this.thumbnail_url,
     this.videoUrl,
   });
@@ -22,11 +20,10 @@ class RecipeCard extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
         height: 220,
         decoration: BoxDecoration(
-          color: Colors.black,
+          color: Colors.yellow,
           borderRadius: BorderRadius.circular(15),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.6),
               offset: Offset(
                 0.0,
                 10.0,
@@ -49,7 +46,7 @@ class RecipeCard extends StatelessWidget {
           children: [
             Align(
               child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 5.0),
+                padding: const EdgeInsets.symmetric(horizontal: 5.0),
                 child: Text(
                   name,
                   style: TextStyle(fontSize: 19, color: Colors.white),
@@ -68,7 +65,7 @@ class RecipeCard extends StatelessWidget {
                     visible: videoUrl != 'noVideo' ? true : false,
                     child: Container(
                       padding: EdgeInsets.all(5),
-                      margin: EdgeInsets.all(10),
+                      margin: EdgeInsets.all(15),
                       decoration: BoxDecoration(
                         color: Colors.black.withOpacity(0.4),
                         borderRadius: BorderRadius.circular(15),
@@ -87,9 +84,9 @@ class RecipeCard extends StatelessWidget {
                             const Icon(
                               Icons.play_circle_fill_rounded,
                               color: Colors.yellow,
-                              size: 18,
+                              size: 20,
                             ),
-                            const SizedBox(width: 7),
+                            const SizedBox(width: 20),
                             const Text(
                               'Play video',
                               style: TextStyle(color: Colors.white),
@@ -101,25 +98,12 @@ class RecipeCard extends StatelessWidget {
                   ),
                   Container(
                     padding: EdgeInsets.all(5),
-                    margin: const EdgeInsets.all(10),
+                    margin: EdgeInsets.all(10),
                     decoration: BoxDecoration(
                       color: Colors.black.withOpacity(0.2),
                       borderRadius: BorderRadius.circular(15),
                     ),
-                    child: Row(
-                      children: [
-                        const Icon(
-                          Icons.schedule,
-                          color: Colors.yellow,
-                          size: 18,
-                        ),
-                        const SizedBox(width: 7),
-                        Text(
-                          cook_time_minutes + " mins",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ],
-                    ),
+                    child: Row(),
                   )
                 ],
               ),

@@ -1,7 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:foodie/pages/home_page.dart';
+import 'package:foodie/homepage.dart';
 import 'package:foodie/pages/login_or_register_page.dart';
 
 class AuthPage extends StatelessWidget {
@@ -15,12 +14,12 @@ class AuthPage extends StatelessWidget {
         builder: (context, snapshot) {
           //user is logged in
           if (snapshot.hasData) {
-            return HomePage();
+            return  const RecipeHomePage();
           }
 
           //user is not logged in
           else {
-            return LoginOrRegisterPage();
+            return const LoginOrRegisterPage();
           }
         },
       ),

@@ -3,10 +3,10 @@ import 'package:foodie/models/food_list_model.dart';
 import 'package:foodie/models/recipe.dart';
 import 'package:http/http.dart' as http;
 
-class RecipeApi {
+class FeedApi {
   Future<FoodListModel> getRecipes() async {
-    final url = Uri.parse(
-        'https://tasty.p.rapidapi.com/recipes/list?from=0&size=34&tags=under_30_minutes');
+    final url =
+        Uri.parse('https://tasty.p.rapidapi.com/recipes/list?from=0&size=5');
 
     final response = await http.get(
       url,
@@ -31,9 +31,7 @@ class RecipeApi {
     final List<Recipe> recipes = [];
 
     for (final recipeData in recipesData) {
-
       final Recipe recipe = Recipe.fromJson(recipeData);
-
 
       recipes.add(recipe);
     }
