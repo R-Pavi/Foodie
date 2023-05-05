@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:foodie/app_bar.dart';
+import 'package:foodie/bottom_nav.dart';
 import 'package:foodie/details.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
@@ -57,9 +59,7 @@ class SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Search Recipe'),
-      ),
+      appBar: const MyAppBar(title: 'Search Recipe'),
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
           : Padding(
@@ -134,6 +134,7 @@ class SearchPageState extends State<SearchPage> {
                 ],
               ),
             ),
+            bottomNavigationBar: const MyGNav(initialIndex: 0),
     );
   }
 }

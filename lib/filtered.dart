@@ -1,5 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:foodie/app_bar.dart';
+import 'package:foodie/bottom_nav.dart';
 import 'package:http/http.dart' as http;
 import 'details.dart';
 
@@ -45,9 +47,7 @@ class _FilteredPageState extends State<FilteredPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Filtered Recipes'),
-      ),
+      appBar: const MyAppBar(title: "Filtered Foods"),
       body: FutureBuilder<List<dynamic>>(
         future: _recipesFuture,
         builder: (context, snapshot) {
@@ -122,6 +122,7 @@ class _FilteredPageState extends State<FilteredPage> {
           }
         },
       ),
+      bottomNavigationBar: const MyGNav(initialIndex: 0),
     );
   }
 }
