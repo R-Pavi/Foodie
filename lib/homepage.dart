@@ -178,7 +178,7 @@ class RecipeHomePageState extends State<RecipeHomePage> {
             children: [
               const Padding(
                 padding: EdgeInsets.all(10.0),
-                child: Text("For You", style: TextStyle(color: Colors.white)),
+                child: Text("Trending", style: TextStyle(color: Colors.white)),
               ),
               const Spacer(),
               Padding(
