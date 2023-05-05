@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:foodie/bottom_nav.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'app_bar.dart';
 import 'filtered.dart';
@@ -134,33 +135,7 @@ class Categories extends StatelessWidget {
           ),
         ),
       ),
-           bottomNavigationBar: GNav(
-          backgroundColor: Colors.black,
-          color: Colors.white,
-          activeColor: Colors.white,
-          tabBackgroundColor: Colors.grey,
-          gap: 8,
-          padding: const EdgeInsets.all(16),
-          tabMargin: const EdgeInsets.all(5),
-          tabs: [
-            GButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const RecipeHomePage()),
-                  );
-                },
-                icon: Icons.home,
-                text: "Home"),
-            const GButton(
-              icon: Icons.rice_bowl,
-              iconColor: Colors.white,
-              text: "Recipes",
-            ),
-            const GButton(icon: Icons.favorite, text: "Favourites"),
-            const GButton(icon: Icons.book, text: "Tips"),
-          ]),
+           bottomNavigationBar: const MyGNav(initialIndex: 0),
     );
   }
 

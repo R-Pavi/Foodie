@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
-
 import 'package:foodie/recipe_carousel.dart';
 import 'package:foodie/views/home.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
-
 import 'package:foodie/models/food_list_model.dart';
 import 'package:foodie/models/recipe.api.dart';
-import 'package:foodie/recipe_carousel.dart';
-
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'app_bar.dart';
+import 'bottom_nav.dart';
 import 'categories.dart';
 import 'filtered.dart';
 
@@ -50,10 +46,13 @@ class RecipeHomePageState extends State<RecipeHomePage> {
         children: [
           Row(children: const [
             Padding(
-              padding: EdgeInsets.only(top: 10.0, left: 10.0, bottom: 10),
+              padding: EdgeInsets.only(top: 13.0, left: 65.0, bottom: 10),
               child: Text(
                 "Wipe Your Drool and start cookin'...",
-                style: TextStyle(color: Colors.white, fontSize: 20),
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),
               ),
             )
           ]),
@@ -169,13 +168,17 @@ class RecipeHomePageState extends State<RecipeHomePage> {
             ),
           ),
           const SizedBox(
-            height: 20,
+            height: 10,
+          ),
+          const Divider(
+            thickness: 1,
+            color: Colors.grey,
           ),
           Row(
             children: [
               const Padding(
                 padding: EdgeInsets.all(10.0),
-                child: Text("Recipes", style: TextStyle(color: Colors.white)),
+                child: Text("For You", style: TextStyle(color: Colors.white)),
               ),
               const Spacer(),
               Padding(
@@ -188,7 +191,7 @@ class RecipeHomePageState extends State<RecipeHomePage> {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => HomePage()),
+                      MaterialPageRoute(builder: (context) => const HomePage()),
                     );
                   },
                 ),
@@ -202,42 +205,7 @@ class RecipeHomePageState extends State<RecipeHomePage> {
           ),
         ],
       ),
-      bottomNavigationBar: GNav(
-          backgroundColor: Colors.black,
-          color: Colors.white,
-          activeColor: Colors.white,
-          tabBackgroundColor: Colors.grey,
-          gap: 8,
-          padding: const EdgeInsets.all(16),
-          tabMargin: const EdgeInsets.all(5),
-          tabs: [
-            GButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const RecipeHomePage()),
-                  );
-                },
-                icon: Icons.home,
-                text: "Home"),
-            const GButton(
-              icon: Icons.rice_bowl,
-              iconColor: Colors.white,
-              text: "Recipes",
-            ),
-            const GButton(icon: Icons.favorite, text: "Favourites"),
-            GButton(
-                onPressed: () {
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(
-                  //       builder: (context) =>  TipsDetailsScreen()),
-                  // );
-                },
-                icon: Icons.book,
-                text: "Tips"),
-          ]),
+      bottomNavigationBar: const MyGNav(initialIndex: 0),
     );
   }
 
