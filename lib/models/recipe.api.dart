@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:developer';
 import 'package:foodie/models/food_list_model.dart';
 import 'package:foodie/models/recipe.dart';
 import 'package:http/http.dart' as http;
@@ -12,9 +11,7 @@ class RecipeApi {
     final response = await http.get(
       url,
       headers: {
-
-        'x-rapidapi-key': '8bfbd4eabamsh6042655d9dbc09cp14ad62jsn92d93d57f8df',
-
+        'x-rapidapi-key': '89380adc05msha92511974c1e9a6p1dc0d7jsn4ae23e1031ab',
         'x-rapidapi-host': 'tasty.p.rapidapi.com',
       },
     );
@@ -42,5 +39,3 @@ class RecipeApi {
     return recipes;
   }
 }
-
-

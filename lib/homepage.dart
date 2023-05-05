@@ -198,6 +198,8 @@ class RecipeHomePageState extends State<RecipeHomePage> {
               ),
             ],
           ),
+          
+
           Flexible(
             child: SingleChildScrollView(
               child: SizedBox(height: 250, child: RecipeCarousel()),
