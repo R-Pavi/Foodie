@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'landing.dart';
 import 'pages/auth_page.dart';
 import 'profile.dart';
 import 'search.dart';
@@ -45,6 +46,7 @@ class _MyAppBarState extends State<MyAppBar> {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      backgroundColor: Colors.red,
       leading: IconButton(
         icon: const Icon(Icons.search),
         onPressed: () {
@@ -54,7 +56,7 @@ class _MyAppBarState extends State<MyAppBar> {
           );
         },
       ),
-      title: Text(widget.title),
+      title: Center(child: Text(widget.title)),
       actions: <Widget>[
         Padding(
           padding: const EdgeInsets.only(right: 8.0),
@@ -76,7 +78,8 @@ class _MyAppBarState extends State<MyAppBar> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const ProfilePage(),
+                          builder: (context) => ProfilePage(
+                              email: FirebaseAuth.instance.currentUser?.email),
                         ),
                       );
                     } else if (value == 'logout') {
@@ -84,26 +87,68 @@ class _MyAppBarState extends State<MyAppBar> {
                       setState(() {
                         isLoggedIn = false;
                       });
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const RecipeLandingPage()),
+                      );
                     }
                   },
                 )
-              : ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const AuthPage(),
-                      ),
-                    ).then((value) {
-                      if (value == true) {
-                        setState(() {
-                          isLoggedIn = true;
-                        });
-                      }
-                    });
-                  },
-                  child: const Text('Login/SignUp'),
-                ),
+              : Padding(
+                padding: const EdgeInsets.only(right: 8.0, bottom: 2),
+                child: SizedBox(
+                    height: kToolbarHeight,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          width: 40.0,
+                          height: 40.0,
+                          child: IconButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const AuthPage(),
+                                ),
+                              ).then((value) {
+                                if (value == true) {
+                                  setState(() {
+                                    isLoggedIn = true;
+                                  });
+                                }
+                              });
+                            },
+                            icon: const Icon(Icons.login),
+                          ),
+                        ),
+                        const Text(
+                          'Login',
+                          style: TextStyle(fontSize: 12.0),
+                        ),
+                      ],
+                    ),
+                  ),
+              ),
+
+          // IconButton(
+          //     onPressed: () {
+          //       Navigator.push(
+          //         context,
+          //         MaterialPageRoute(
+          //           builder: (context) => const AuthPage(),
+          //         ),
+          //       ).then((value) {
+          //         if (value == true) {
+          //           setState(() {
+          //             isLoggedIn = true;
+          //           });
+          //         }
+          //       });
+          //     },
+          //     icon: const Icon(Icons.login),
+          //   ),
         )
       ],
     );

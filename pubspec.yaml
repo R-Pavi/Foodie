@@ -43,6 +43,7 @@ dependencies:
   firebase_core: ^2.10.0
   firebase_auth: ^4.4.2
   font_awesome_flutter: ^10.4.0
+  url_launcher: ^6.1.10
   # carousel_slider: ^4.2.1
 
 
@@ -77,6 +78,7 @@ flutter:
     - assets/images/landingpg5.jpeg
     - assets/images/landing.jpg
     - assets/images/logo1.png
+    - assets/images/profile_pic.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

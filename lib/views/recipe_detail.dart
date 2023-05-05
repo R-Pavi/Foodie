@@ -1,3 +1,6 @@
+import 'package:foodie/app_bar.dart';
+import 'package:foodie/bottom_nav.dart';
+import 'package:foodie/models/recipe.dart';
 import 'package:foodie/views/widgets/recipe_card.dart';
 import 'package:flutter/material.dart';
 
@@ -39,16 +42,7 @@ class RecipeDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            Icon(Icons.restaurant_menu),
-            SizedBox(width: 10),
-            Text('Food Recipe')
-          ],
-        ),
-      ),
+      appBar: const MyAppBar(title: 'Food Recipe'),
       body: SingleChildScrollView(
         child: SafeArea(
             child: Column(
@@ -211,6 +205,7 @@ class RecipeDetail extends StatelessWidget {
           ],
         )),
       ),
+      bottomNavigationBar: const MyGNav(initialIndex: 0,),
     );
   }
 }
