@@ -40,7 +40,7 @@ class RecipeHomePageState extends State<RecipeHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const MyAppBar(
-        title: 'Recipe',
+        title: 'Home',
       ),
       body: Column(
         children: [
@@ -60,8 +60,8 @@ class RecipeHomePageState extends State<RecipeHomePage> {
             children: [
               const Padding(
                 padding: EdgeInsets.all(10.0),
-                child:
-                    Text("Categories", style: TextStyle(color: Colors.white)),
+                child: Text("Discover New Menu",
+                    style: TextStyle(color: Colors.white)),
               ),
               const Spacer(),
               Padding(
@@ -198,8 +198,6 @@ class RecipeHomePageState extends State<RecipeHomePage> {
               ),
             ],
           ),
-          
-
           Flexible(
             child: SingleChildScrollView(
               child: SizedBox(height: 250, child: RecipeCarousel()),

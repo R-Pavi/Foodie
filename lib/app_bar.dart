@@ -47,15 +47,6 @@ class _MyAppBarState extends State<MyAppBar> {
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: Colors.red,
-      leading: IconButton(
-        icon: const Icon(Icons.search),
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const SearchPage()),
-          );
-        },
-      ),
       title: Center(child: Text(widget.title)),
       actions: <Widget>[
         Padding(
@@ -96,8 +87,8 @@ class _MyAppBarState extends State<MyAppBar> {
                   },
                 )
               : Padding(
-                padding: const EdgeInsets.only(right: 8.0, bottom: 2),
-                child: SizedBox(
+                  padding: const EdgeInsets.only(right: 8.0, bottom: 2),
+                  child: SizedBox(
                     height: kToolbarHeight,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -130,25 +121,7 @@ class _MyAppBarState extends State<MyAppBar> {
                       ],
                     ),
                   ),
-              ),
-
-          // IconButton(
-          //     onPressed: () {
-          //       Navigator.push(
-          //         context,
-          //         MaterialPageRoute(
-          //           builder: (context) => const AuthPage(),
-          //         ),
-          //       ).then((value) {
-          //         if (value == true) {
-          //           setState(() {
-          //             isLoggedIn = true;
-          //           });
-          //         }
-          //       });
-          //     },
-          //     icon: const Icon(Icons.login),
-          //   ),
+                ),
         )
       ],
     );

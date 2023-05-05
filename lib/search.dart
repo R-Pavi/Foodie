@@ -134,7 +134,7 @@ class SearchPageState extends State<SearchPage> {
                 ],
               ),
             ),
-            bottomNavigationBar: const MyGNav(initialIndex: 0),
+      bottomNavigationBar: const MyGNav(initialIndex: 2),
     );
   }
 }
