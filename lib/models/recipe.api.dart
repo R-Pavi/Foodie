@@ -35,7 +35,9 @@ class RecipeApi {
           cook_time_minutes: recipeData['cook_time_minutes'].toString(),
           description: recipeData['description'],
           user_ratings: recipeData['user_ratings'].toString(),
-videoUrl: recipeData['original_video_url'] != null ? recipeData['original_video_url'].toString() : ''
+          videoUrl: recipeData['original_video_url'] != null
+              ? recipeData['original_video_url'].toString()
+              : ''
 
 // user_ratings: double.parse(recipeData['user_ratings']['average']),
           // servings: recipeData['num_servings'],

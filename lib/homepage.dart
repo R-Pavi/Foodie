@@ -128,7 +128,7 @@ class RecipeHomePageState extends State<RecipeHomePage> {
             height: 20,
           ),
           Row(
-            children:  [
+            children: [
               const Padding(
                 padding: EdgeInsets.all(10.0),
                 child: Text("Recipes", style: TextStyle(color: Colors.white)),

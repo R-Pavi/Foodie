@@ -37,11 +37,11 @@ dependencies:
   http: ^0.13.5
   video_player: ^2.6.1
   google_nav_bar: ^5.0.6
-  
+
   anim_search_bar: ^2.0.3
   firebase_core: ^2.10.0
   firebase_auth: ^4.4.2
-
+  lottie: ^2.3.2
 
 dev_dependencies:
   flutter_test:
@@ -69,7 +69,6 @@ flutter:
     - assets/images/
     - assets/images/landing.jpg
     - assets/images/logo1.png
-
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

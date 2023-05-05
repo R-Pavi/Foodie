@@ -16,10 +16,10 @@ class MyButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         padding: const EdgeInsets.all(25),
-        margin: const EdgeInsets.symmetric(horizontal: 25),
+        margin: const EdgeInsets.symmetric(horizontal: 90),
         decoration: BoxDecoration(
-          color: Colors.black,
-          borderRadius: BorderRadius.circular(17),
+          color: Color.fromARGB(255, 29, 28, 28),
+          borderRadius: BorderRadius.circular(12),
         ),
         child: Center(
           child: Text(

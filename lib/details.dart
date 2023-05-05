@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
-
 class RecipeDetailsPage extends StatefulWidget {
   final dynamic recipe;
 
@@ -23,55 +22,48 @@ class _RecipeDetailsPageState extends State<RecipeDetailsPage> {
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: Stack(
-  children: [
-    Container(
-      height: 200,
-      width: 200,
-      decoration: BoxDecoration(
-        border: Border.all(
-          color: Colors.grey,
-          width: 2,
-        ),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(5.0),
-        child: Image.network(
-          widget.recipe['thumbnail_url'],
-          fit: BoxFit.cover,
-        ),
-      ),
-    ),
-    const Positioned(
-      top: 5,
-      right: 5,
-      child: Icon(
-        Icons.favorite,
-        color: Colors.white,
-        size: 30,
-      ),
-    ),
-  ],
-),
-
+              children: [
+                Container(
+                  height: 200,
+                  width: 200,
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      color: Colors.grey,
+                      width: 2,
+                    ),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(5.0),
+                    child: Image.network(
+                      widget.recipe['thumbnail_url'],
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+                const Positioned(
+                  top: 5,
+                  right: 5,
+                  child: Icon(
+                    Icons.favorite,
+                    color: Colors.white,
+                    size: 30,
+                  ),
+                ),
+              ],
+            ),
           ),
           const SizedBox(height: 16),
           Text(
             widget.recipe['name'],
             style: const TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              color: Colors.white
-            ),
+                fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),
           ),
           const SizedBox(height: 16),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Text(
               widget.recipe['description'],
-              style: const TextStyle(
-                fontSize: 18,
-                color: Colors.white
-              ),
+              style: const TextStyle(fontSize: 18, color: Colors.white),
             ),
           ),
         ],

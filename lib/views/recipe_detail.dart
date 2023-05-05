@@ -20,15 +20,14 @@ class RecipeDetail extends StatelessWidget {
 
   factory RecipeDetail.fromJson(dynamic json) {
     return RecipeDetail(
-        name: json['name'] as String,
-        thumbnail_url: json['thumbnail_url'][0]['hostedLargeUrl'] as String,
-        user_ratings: json['user_ratings'].toString(),
-        cook_time_minutes: json['cook_time_minutes'].toString(),
-        description: json['description'] != null ? json['description'] : " ",
-        videoUrl: json['original_video_url'] != null? json['original_video_url'] : " ",
-        
-        );
-  
+      name: json['name'] as String,
+      thumbnail_url: json['thumbnail_url'][0]['hostedLargeUrl'] as String,
+      user_ratings: json['user_ratings'].toString(),
+      cook_time_minutes: json['cook_time_minutes'].toString(),
+      description: json['description'] != null ? json['description'] : " ",
+      videoUrl:
+          json['original_video_url'] != null ? json['original_video_url'] : " ",
+    );
   }
   @override
   Widget build(BuildContext context) {
@@ -59,8 +58,8 @@ class RecipeDetail extends StatelessWidget {
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
                   child: Text(
                     'Description',
                     style: TextStyle(
@@ -76,7 +75,7 @@ class RecipeDetail extends StatelessWidget {
                     style: TextStyle(color: Colors.black, fontSize: 14),
                     textAlign: TextAlign.justify,
                   ),
-                )
+                ),
               ],
             ),
           )
