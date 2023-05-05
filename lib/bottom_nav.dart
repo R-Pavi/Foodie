@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodie/search.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'homepage.dart';
 import 'views/home.dart';
@@ -41,11 +42,16 @@ class MyGNav extends StatelessWidget {
           iconColor: Colors.white,
           text: "Recipes",
         ),
-        const GButton(icon: Icons.favorite, text: "Favourites"),
+         
         GButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const SearchPage()),
+            );
+          },
           icon: Icons.book,
-          text: "Tips",
+          text: "Search",
         ),
       ],
       
