@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:foodie/bottom_nav.dart';
 
 
-
 class RecipeDetailsPage extends StatefulWidget {
   final dynamic recipe;
 
