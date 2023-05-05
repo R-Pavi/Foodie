@@ -28,7 +28,7 @@ class _FilteredPageState extends State<FilteredPage> {
     final response = await http.get(
       url,
       headers: {
-        'x-rapidapi-key': 'b28101f78bmsh806710711052f4bp1d477ejsnbb725ff3165f',
+        'x-rapidapi-key': '89380adc05msha92511974c1e9a6p1dc0d7jsn4ae23e1031ab',
         'x-rapidapi-host': 'tasty.p.rapidapi.com',
       },
     );

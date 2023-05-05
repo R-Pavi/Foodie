@@ -1,7 +1,8 @@
+import 'package:foodie/models/recipe.dart';
 import 'package:foodie/views/widgets/recipe_card.dart';
 import 'package:flutter/material.dart';
 
-class RecipeDetail extends StatelessWidget {
+class FeedDetail extends StatelessWidget {
   final String name;
   final String? thumbnail_url;
   final String cook_time_minutes;
@@ -11,7 +12,7 @@ class RecipeDetail extends StatelessWidget {
   final String instructions;
   final String rawText;
 
-  RecipeDetail({
+  FeedDetail({
     required this.name,
     this.thumbnail_url,
     required this.cook_time_minutes,
@@ -22,8 +23,8 @@ class RecipeDetail extends StatelessWidget {
     required this.rawText,
   });
 
-  factory RecipeDetail.fromJson(dynamic json) {
-    return RecipeDetail(
+  factory FeedDetail.fromJson(dynamic json) {
+    return FeedDetail(
       name: json['name'] as String,
       thumbnail_url: json['thumbnail_url'][0]['hostedLargeUrl'] as String,
       cook_time_minutes: json['cook_time_minutes'].toString(),
@@ -214,3 +215,4 @@ class RecipeDetail extends StatelessWidget {
     );
   }
 }
+

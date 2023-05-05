@@ -1,23 +1,41 @@
-import 'package:http/http.dart' as http;
 import 'dart:convert';
-import 'package:foodie/models/feed.dart';
+import 'package:foodie/models/food_list_model.dart';
+import 'package:foodie/models/recipe.dart';
+import 'package:http/http.dart' as http;
 
-Future<List<Recipe>> fetchFeedList() async {
-  // Call the API to fetch the feed data
-  final response = await http.get(
-    Uri.parse('https://tasty.p.rapidapi.com/feeds/list'),
-    headers: {
-      'x-rapidapi-host': 'tasty.p.rapidapi.com',
-      'x-rapidapi-key': 'YOUR_API_KEY_HERE',
-    },
-  );
-  if (response.statusCode == 200) {
-    // Parse the response and return the list of recipes
-    final List<dynamic> data = jsonDecode(response.body)['results'];
-    final List<Recipe> recipes = data.map((item) => Recipe.fromJson(item)).toList();
+class FeedApi {
+  Future<FoodListModel> getRecipes() async {
+    final url =
+        Uri.parse('https://tasty.p.rapidapi.com/recipes/list?from=0&size=5');
+
+    final response = await http.get(
+      url,
+      headers: {
+        'x-rapidapi-key': '89380adc05msha92511974c1e9a6p1dc0d7jsn4ae23e1031ab',
+        'x-rapidapi-host': 'tasty.p.rapidapi.com',
+      },
+    );
+
+    if (response.statusCode == 200) {
+      final data = jsonDecode(response.body);
+      final recipes = data['results'];
+      // log(response.body.toString());
+
+      return FoodListModel.fromJson(jsonDecode(response.body));
+    } else {
+      throw Exception('Failed to fetch recipes');
+    }
+  }
+
+  List<Recipe> parseRecipes(List<dynamic> recipesData) {
+    final List<Recipe> recipes = [];
+
+    for (final recipeData in recipesData) {
+      final Recipe recipe = Recipe.fromJson(recipeData);
+
+      recipes.add(recipe);
+    }
+
     return recipes;
-  } else {
-    // Throw an exception if the request failed
-    throw Exception('Failed to fetch feed data');
   }
 }

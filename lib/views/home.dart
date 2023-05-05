@@ -2,10 +2,7 @@ import 'package:foodie/models/food_list_model.dart';
 import 'package:foodie/views/recipe_detail.dart';
 import 'package:flutter/material.dart';
 import 'package:foodie/models/recipe.api.dart';
-import 'package:foodie/models/recipe.dart';
 import 'package:foodie/views/widgets/recipe_card.dart';
-import 'package:carousel_slider/carousel_slider.dart';
-
 
 class HomePage extends StatefulWidget {
   @override

@@ -1,15 +1,11 @@
 class Recipe {
   final String? name;
   final String? thumbnail_url;
-  // final int user_ratings;
   final int? cook_time_minutes;
   final String? description;
   final String? videoUrl;
   final int? servings;
   final String? rawText;
-  // final List<Ingredient> ingredients;
-
-  /// inside component class
   final String? instructions;
 
   Recipe({
